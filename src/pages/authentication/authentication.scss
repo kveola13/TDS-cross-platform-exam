@@ -1,0 +1,50 @@
+page-authentication {
+
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      margin-top: 20px;
+      align-self: stretch;
+    }
+  }
+  ion-content {
+    background: url(http://bit.do/tds_200_books) no-repeat center center fixed;
+    background-size: cover;
+  }
+  .text-input-field {
+    background: map-get($colors, bookthemetransparent) !important;
+    color: map-get($colors, lighttext) !important;
+    padding: 5px;
+    border: 2px solid map-get($colors, lighttext);
+    border-radius: 30px;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.14);
+  }
+  h1, h3{
+    color: map-get($colors, lighttext) !important;
+    //-webkit-text-stroke: 1px map-get($colors, bookthemetransparent) !important;
+    //-webkit-text-stroke-width: 2px;
+  }
+  .button{
+    border: 2px solid map-get($colors, lighttext);
+    border-radius: 30px;
+    font-size: x-large;
+    margin-left: 25%;
+    width: 150px;
+    height: 50px;
+  }
+  //Attempted to style the toast message
+  //.toast-message{
+  //    background: map-get($colors, bookthemetransparent) !important;
+  //    color: map-get($colors, lighttext) !important;
+  //}
+  //.toast-container{
+  //  background: map-get($colors, bookthemetransparent) !important;
+  //  color: map-get($colors, lighttext) !important;
+  //}
+}

@@ -1,0 +1,68 @@
+<ion-header color="bookthemecolor">
+
+  <ion-navbar color="bookthemecolor">
+    <ion-title color="bookthemecolor">Book details</ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="logOut()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="list">
+        Title: {{post.body}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="sub-list">
+        By: {{post.bookAuthor}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="sub-list">
+        Price: {{post.price}} $
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Sold by: {{post.author}}
+      </ion-col>
+      <ion-col>
+        Email: {{post.email}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Condition: {{post.bookCondition}}
+      </ion-col>
+      <ion-col>
+        Date: {{post.date}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img src="{{post.imageURL}}"/>
+      </ion-col>
+    </ion-row>
+    <ion-item *ngFor="let comment of comments | async">
+      {{author}} : {{comment.body}}
+    </ion-item>
+  </ion-grid>
+
+  <!--Users can add comments to a post if they like it-->
+  <ion-input [(ngModel)]="commentInput" placeholder="Enter comment">
+  </ion-input>
+  <button color="bookthemecolor" ion-button (click)="addComment()">
+    Add comment
+  </button>
+
+  <ion-row>
+    <button color="bookthemecolor" ion-button (click)="deleteBook()">
+      Delete Book
+    </button>
+  </ion-row>
+</ion-content>

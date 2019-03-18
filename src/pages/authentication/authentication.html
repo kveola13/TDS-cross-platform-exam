@@ -1,0 +1,35 @@
+<ion-content color="transparentlight" padding>
+  <section class="container">
+    <section>
+      <h1>Sell your books!</h1>
+      <h3>Sign in to begin!</h3>
+    </section>
+
+    <section>
+      <ion-label color="transparentlight" fixed>
+        Username
+      </ion-label>
+      <!--added keyup-event for user to log in if they press enter-->
+      <ion-input class="text-input-field" type="text" [(ngModel)]="user.username" (keyup.enter)="logInUser()">
+      </ion-input>
+    </section>
+    <section>
+      <ion-label color="transparentlight" fixed>
+        Password
+      </ion-label>
+      <!--added keyup-event for user to log in if they press enter-->
+      <ion-input class="text-input-field" type="password" [(ngModel)]="user.password" (keyup.enter)="logInUser()">
+      </ion-input>
+    </section>
+    <section>
+      <button color="bookthemetransparent" ion-button  (click)="logInUser()">
+        Log in
+      </button>
+    </section>
+    <section>
+      <button color="bookthemetransparent" ion-button (click)="registerUser()">
+        Register
+      </button>
+    </section>
+  </section>
+</ion-content>

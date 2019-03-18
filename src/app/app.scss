@@ -1,0 +1,11 @@
+button {
+  color: map-get($colors, light) !important;
+}
+
+title {
+  color: map-get($colors, bookthemecolor) !important;
+}
+
+ion-buttons {
+  color: map-get($colors, bookthemecolor) !important;
+}

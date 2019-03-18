@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="bookthemecolor">
+    <ion-title class="title">
+      Books4Sale
+    </ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="goToAddPostPage()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button icon-only ion-button (click)="logOut()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="bookthemecolor">
+    <ion-segment color="light">
+      <ion-segment-button value="Books" (click)="selectedTab(0)">
+        <ion-icon name="camera"> Books</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark" (click)="selectedTab(1)">
+        <ion-icon name="folder"> List</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="map" (click)="goToMapPage()">
+        <ion-icon name="compass"> Map</ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #slider>
+    <ion-slide>
+      <ion-list class="image-view">
+        <img src="{{post.imageURL}}" *ngFor="let post of posts | async" (click)="goToDetailsPage(post)">
+      </ion-list>
+    </ion-slide>
+    <ion-slide>
+      <ion-row class="list-view" no-lines>
+        <ion-col class="list-view" no-lines>
+          <ion-item *ngFor="let post of posts | async" (click)="goToDetailsPage(post)">
+            {{post.body}}
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-slide>
+    <ion-slide>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+
+<!--<ion-content>-->
+<!--&lt;!&ndash;<ion-list class="image-view" no-lines>&ndash;&gt;-->
+<!--&lt;!&ndash;<img src="{{post.imageURL}}" *ngFor="let post of posts | async" (click)="goToDetailsPage(post)">&ndash;&gt;-->
+<!--&lt;!&ndash;<ion-item *ngFor="let post of posts | async" (click)="goToDetailsPage(post)">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;async must be used for observables, else it will fail&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;{{post.body}}&ndash;&gt;-->
+<!--&lt;!&ndash;</ion-item>&ndash;&gt;-->
+<!--&lt;!&ndash;</ion-list>&ndash;&gt;-->
+<!--</ion-content>-->

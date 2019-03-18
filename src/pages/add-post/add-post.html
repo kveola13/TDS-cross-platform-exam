@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="bookthemecolor">
+    <ion-title>Adding a new book</ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="logOut()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="list">
+        <ion-input [(ngModel)]="postText" placeholder="Name of the book"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="sub-list">
+        <ion-input [(ngModel)]="bookAuthor" placeholder="Author"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="sub-list">
+        <ion-input [(ngModel)]="price" placeholder="Price"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="sub-list">
+        <ion-input [(ngModel)]="bookCondition" placeholder="State of the book"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button color="bookthemecolor" ion-button (click)="openCamera()">Take picture</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button color="bookthemecolor" ion-button (click)="addPost()">Add book</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <img *ngIf="previewImage.length > 0" style="height: 300px" [src]="'data:image/jpeg;base64,' + previewImage"/>
+    </ion-row>
+  </ion-grid>
+  <!--<ion-row end>-->
+  <!--<ion-input [(ngModel)]="coordinationText" placeholder="coordinates"></ion-input>-->
+  <!--</ion-row>-->
+</ion-content>

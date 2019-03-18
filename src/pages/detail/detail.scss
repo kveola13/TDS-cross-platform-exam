@@ -1,0 +1,22 @@
+page-detail {
+  .title {
+    margin-left: 25%;
+    font-size: x-large;
+  }
+  .list {
+    font-size: x-large;
+    align-content: start;
+  }
+  .sub-list {
+    font-size: large;
+    align-content: start;
+  }
+  .button {
+    font-size: large;
+    height: 50px;
+    width: 150px;
+    margin-left: 25%;
+    border: 2px solid map-get($colors, lighttext);
+    border-radius: 30px;
+  }
+}
